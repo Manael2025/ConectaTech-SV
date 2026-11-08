@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto | ConectaTech SV</title>
+  <link rel="stylesheet" href="/css/estilos.css">
+</head>
+<body>
+  <header id="header"></header>
+
+  <section class="encabezado-pagina">
+    <div class="contenedor">
+      <h1>Contáctanos</h1>
+      <p>¿Dudas sobre un producto o tu pedido? Escríbenos.</p>
+    </div>
+  </section>
+
+  <main class="contenedor seccion">
+    <div class="contacto-grid">
+
+      <form class="bloque" id="form-contacto" novalidate>
+        <h3>Envíanos un mensaje</h3>
+        <div id="aviso"></div>
+
+        <div class="campo">
+          <label for="nombre">Nombre</label>
+          <input type="text" id="nombre" name="nombre" maxlength="80" autocomplete="name">
+        </div>
+        <div class="campo">
+          <label for="correo">Correo electrónico</label>
+          <input type="email" id="correo" name="correo" maxlength="100" autocomplete="email">
+        </div>
+        <div class="campo">
+          <label for="telefono">Teléfono (opcional)</label>
+          <input type="tel" id="telefono" name="telefono" maxlength="20" autocomplete="tel">
+        </div>
+        <div class="campo">
+          <label for="asunto">Asunto</label>
+          <input type="text" id="asunto" name="asunto" maxlength="100">
+        </div>
+        <div class="campo">
+          <label for="mensaje-texto">Mensaje</label>
+          <textarea id="mensaje-texto" name="mensaje" rows="5" maxlength="1000"></textarea>
+        </div>
+
+        <!-- Campo trampa para robots: las personas no lo ven -->
+        <div class="trampa" aria-hidden="true">
+          <label>No llenar este campo
+            <input type="text" name="sitio_web" tabindex="-1" autocomplete="off">
+          </label>
+        </div>
+
+        <button type="submit" class="btn btn-prin" style="width:100%">Enviar mensaje</button>
+      </form>
+
+      <aside class="bloque" id="datos-tienda"></aside>
+    </div>
+  </main>
+
+  <footer id="footer"></footer>
+
+  <script src="/js/main.js"></script>
+  <script src="/js/contacto.js"></script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Finalizar compra | ConectaTech SV</title>
+  <link rel="stylesheet" href="/css/estilos.css">
+</head>
+<body>
+  <header id="header"></header>
+
+  <main class="contenedor seccion">
+    <h2>Finalizar compra</h2>
+    <div id="mensaje"></div>
+
+    <div class="checkout-grid" id="contenido" hidden>
+      <form id="form-checkout" novalidate>
+
+        <section class="bloque">
+          <h3>1. Tus datos</h3>
+          <div class="campo">
+            <label for="nombre">Nombre completo</label>
+            <input type="text" id="nombre" name="nombre" maxlength="80" autocomplete="name">
+          </div>
+          <div class="campo">
+            <label for="correo">Correo electrónico</label>
+            <input type="email" id="correo" name="correo" autocomplete="email">
+          </div>
+          <div class="campo">
+            <label for="telefono">Teléfono</label>
+            <input type="tel" id="telefono" name="telefono" placeholder="7000-0000" autocomplete="tel">
+          </div>
+        </section>
+
+        <section class="bloque">
+          <h3>2. Entrega</h3>
+          <label class="opcion">
+            <input type="radio" name="tipo_entrega" value="domicilio" checked>
+            <span>Entrega a domicilio<small>El costo depende del departamento</small></span>
+          </label>
+          <label class="opcion">
+            <input type="radio" name="tipo_entrega" value="retiro">
+            <span>Retiro en punto acordado<small>Gratis. Te contactaremos para coordinar</small></span>
+          </label>
+
+          <div id="bloque-direccion">
+            <div class="campo">
+              <label for="departamento">Departamento</label>
+              <select id="departamento" name="departamento"></select>
+            </div>
+            <div class="campo">
+              <label for="municipio">Municipio</label>
+              <input type="text" id="municipio" name="municipio" maxlength="60">
+            </div>
+            <div class="campo">
+              <label for="direccion">Dirección</label>
+              <input type="text" id="direccion" name="direccion" maxlength="200" placeholder="Colonia, calle, número de casa, referencias">
+            </div>
+          </div>
+
+          <div class="campo">
+            <label for="notas">Notas del pedido (opcional)</label>
+            <textarea id="notas" name="notas" rows="2" maxlength="300"></textarea>
+          </div>
+        </section>
+
+        <section class="bloque">
+          <h3>3. Pago</h3>
+          <label class="opcion">
+            <input type="radio" name="metodo_pago" value="contra_entrega" checked>
+            <span>Pago contra entrega<small>Pagas en efectivo al recibir o retirar tu pedido</small></span>
+          </label>
+          <label class="opcion">
+            <input type="radio" name="metodo_pago" value="transferencia">
+            <span>Transferencia bancaria<small>Al confirmar verás los datos para transferir</small></span>
+          </label>
+        </section>
+
+        <section class="bloque">
+          <h3>4. Cupón de descuento</h3>
+          <div class="fila-cupon">
+            <input type="text" id="cupon" placeholder="Escribe tu código" maxlength="30">
+            <button type="button" class="btn btn-sec" id="aplicar-cupon" style="width:auto">Aplicar</button>
+          </div>
+        </section>
+
+        <button type="submit" class="btn btn-prin" style="width:100%">Confirmar pedido</button>
+      </form>
+
+      <aside class="resumen" id="resumen"></aside>
+    </div>
+  </main>
+
+  <footer id="footer"></footer>
+
+  <script src="/js/main.js"></script>
+  <script src="/js/checkout.js"></script>
+</body>
+</html>

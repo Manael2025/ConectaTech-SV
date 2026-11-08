@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cupones | Admin ConectaTech SV</title>
+  <link rel="stylesheet" href="/css/estilos.css">
+  <link rel="stylesheet" href="/css/admin.css">
+</head>
+<body class="admin">
+  <div class="admin-layout">
+    <nav class="admin-menu" id="menu-admin"></nav>
+
+    <main class="admin-main">
+      <h1>Cupones</h1>
+      <div id="mensaje"></div>
+
+      <form class="admin-caja form-linea" id="form-cupon" novalidate>
+        <div class="campo">
+          <label for="codigo">Código</label>
+          <input type="text" id="codigo" name="codigo" maxlength="20" placeholder="PRIMAVERA15" style="text-transform:uppercase">
+        </div>
+        <div class="campo">
+          <label for="porcentaje">Descuento (%)</label>
+          <input type="number" id="porcentaje" name="porcentaje" min="1" max="90" step="1" placeholder="15">
+        </div>
+        <button type="submit" class="btn btn-prin">Crear cupón</button>
+      </form>
+
+      <div class="admin-caja" style="margin-top:18px">
+        <div class="tabla-caja" id="tabla-cupones"><p class="vacio">Cargando...</p></div>
+      </div>
+    </main>
+  </div>
+
+  <script src="/js/main.js"></script>
+  <script src="/js/admin.js"></script>
+  <script src="/js/admin-cupones.js"></script>
+</body>
+</html>

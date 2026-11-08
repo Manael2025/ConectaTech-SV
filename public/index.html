@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ConectaTech SV | Tu tecnología, siempre conectada</title>
+  <link rel="stylesheet" href="/css/estilos.css">
+</head>
+<body>
+  <header id="header"></header>
+
+  <section class="hero">
+    <div class="contenedor">
+      <h1>Tu tecnología, siempre conectada</h1>
+      <p>Audífonos, cargadores, fundas y accesorios con entrega a todo El Salvador.</p>
+      <a href="/productos.html" class="btn">Ver productos</a>
+    </div>
+  </section>
+
+  <main class="contenedor">
+    <section class="seccion">
+      <h2>Categorías</h2>
+      <div class="grid-cat" id="categorias"></div>
+    </section>
+
+    <section class="seccion">
+      <h2>Ofertas</h2>
+      <div class="grid-prod" id="ofertas"></div>
+    </section>
+
+    <section class="seccion">
+      <h2>Productos destacados</h2>
+      <div class="grid-prod" id="destacados"></div>
+    </section>
+  </main>
+
+  <footer id="footer"></footer>
+
+  <script src="/js/main.js"></script>
+  <script>
+    async function cargarInicio() {
+      try {
+        const [categorias, ofertas, todos] = await Promise.all([
+          pedirApi('/api/categorias'),
+          pedirApi('/api/productos?oferta=1'),
+          pedirApi('/api/productos')
+        ]);
+
+        document.getElementById('categorias').innerHTML = categorias.map(c => `
+          <a class="cat" href="/productos.html?categoria=${c.id}">
+            <h3>${esc(c.nombre)}</h3>
+            <p>${esc(c.descripcion)}</p>
+          </a>`).join('');
+
+        document.getElementById('ofertas').innerHTML = ofertas.map(tarjetaProducto).join('');
+        document.getElementById('destacados').innerHTML = todos.slice(0, 4).map(tarjetaProducto).join('');
+      } catch (error) {
+        document.querySelector('main').innerHTML =
+          '<p class="vacio">No se pudo cargar la tienda. Intenta de nuevo más tarde.</p>';
+      }
+    }
+    cargarInicio();
+  </script>
+</body>
+</html>

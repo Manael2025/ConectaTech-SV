@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Productos | Admin ConectaTech SV</title>
+  <link rel="stylesheet" href="/css/estilos.css">
+  <link rel="stylesheet" href="/css/admin.css">
+</head>
+<body class="admin">
+  <div class="admin-layout">
+    <nav class="admin-menu" id="menu-admin"></nav>
+
+    <main class="admin-main">
+      <div class="barra-titulo">
+        <h1>Productos</h1>
+        <button class="btn btn-prin" id="nuevo">Nuevo producto</button>
+      </div>
+
+      <div id="mensaje"></div>
+
+      <div class="filtros">
+        <input type="search" id="buscar" placeholder="Buscar producto...">
+        <select id="filtro-categoria"></select>
+      </div>
+
+      <div class="admin-caja">
+        <div class="tabla-caja" id="tabla-productos"><p class="vacio">Cargando...</p></div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Formulario para crear y editar -->
+  <dialog id="dialogo">
+    <form id="form-producto" novalidate>
+      <h2 id="titulo-dialogo">Nuevo producto</h2>
+      <div id="mensaje-form"></div>
+
+      <div class="campo">
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" name="nombre" maxlength="100">
+      </div>
+
+      <div class="campo">
+        <label for="descripcion">Descripción</label>
+        <textarea id="descripcion" name="descripcion" rows="3" maxlength="500"></textarea>
+      </div>
+
+      <div class="campo">
+        <label for="categoria_id">Categoría</label>
+        <select id="categoria_id" name="categoria_id"></select>
+      </div>
+
+      <div class="dos-col">
+        <div class="campo">
+          <label for="precio">Precio ($)</label>
+          <input type="number" id="precio" name="precio" step="0.01" min="0">
+        </div>
+        <div class="campo">
+          <label for="stock">Stock</label>
+          <input type="number" id="stock" name="stock" step="1" min="0">
+        </div>
+      </div>
+
+      <label class="casilla">
+        <input type="checkbox" id="en_oferta" name="en_oferta"> Producto en oferta
+      </label>
+      <div class="campo" id="campo-oferta" hidden>
+        <label for="precio_oferta">Precio de oferta ($)</label>
+        <input type="number" id="precio_oferta" name="precio_oferta" step="0.01" min="0">
+      </div>
+
+      <div class="campo">
+        <label for="imagen">Archivo de imagen</label>
+        <input type="text" id="imagen" name="imagen" maxlength="120" placeholder="mouse.jpg">
+        <p class="ayuda">Copia la imagen en la carpeta <strong>public/img</strong> y escribe aquí solo su nombre.</p>
+      </div>
+
+      <label class="casilla">
+        <input type="checkbox" id="activo" name="activo"> Visible en la tienda
+      </label>
+
+      <div class="botones-dialogo">
+        <button type="button" class="btn btn-sec" id="cancelar" style="width:auto">Cancelar</button>
+        <button type="submit" class="btn btn-prin">Guardar</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script src="/js/main.js"></script>
+  <script src="/js/admin.js"></script>
+  <script src="/js/admin-productos.js"></script>
+</body>
+</html>

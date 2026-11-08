@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pedidos | Admin ConectaTech SV</title>
+  <link rel="stylesheet" href="/css/estilos.css">
+  <link rel="stylesheet" href="/css/admin.css">
+</head>
+<body class="admin">
+  <div class="admin-layout">
+    <nav class="admin-menu" id="menu-admin"></nav>
+
+    <main class="admin-main">
+      <h1>Pedidos</h1>
+      <div id="mensaje"></div>
+
+      <div class="filtros">
+        <input type="search" id="buscar" placeholder="Buscar por cliente, correo o número (CT-00001)...">
+        <select id="filtro-estado">
+          <option value="">Todos los estados</option>
+          <option value="pendiente">Pendiente</option>
+          <option value="confirmado">Confirmado</option>
+          <option value="enviado">Enviado</option>
+          <option value="entregado">Entregado</option>
+          <option value="cancelado">Cancelado</option>
+        </select>
+      </div>
+
+      <div class="admin-caja">
+        <div class="tabla-caja" id="tabla-pedidos"><p class="vacio">Cargando...</p></div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Detalle del pedido -->
+  <dialog id="dialogo" class="ancho">
+    <div id="contenido-dialogo"></div>
+    <div class="botones-dialogo">
+      <button type="button" class="btn btn-sec" id="cerrar" style="width:auto">Cerrar</button>
+    </div>
+  </dialog>
+
+  <script src="/js/main.js"></script>
+  <script src="/js/admin.js"></script>
+  <script src="/js/admin-pedidos.js"></script>
+</body>
+</html>

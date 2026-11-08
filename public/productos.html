@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Productos | ConectaTech SV</title>
+  <link rel="stylesheet" href="/css/estilos.css">
+</head>
+<body>
+  <header id="header"></header>
+
+  <main class="contenedor seccion">
+    <h2>Todos los productos</h2>
+
+    <div class="filtros">
+      <input type="search" id="buscar" placeholder="Buscar producto...">
+      <select id="categoria"></select>
+      <select id="orden">
+        <option value="">Ordenar por...</option>
+        <option value="precio_asc">Precio: menor a mayor</option>
+        <option value="precio_desc">Precio: mayor a menor</option>
+        <option value="nombre">Nombre (A-Z)</option>
+      </select>
+      <label><input type="checkbox" id="oferta"> Solo ofertas</label>
+    </div>
+
+    <p class="conteo" id="conteo"></p>
+    <div class="grid-prod" id="productos"></div>
+  </main>
+
+  <footer id="footer"></footer>
+
+  <script src="/js/main.js"></script>
+  <script src="/js/productos.js"></script>
+</body>
+</html>

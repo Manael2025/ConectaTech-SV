@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clientes | Admin ConectaTech SV</title>
+  <link rel="stylesheet" href="/css/estilos.css">
+  <link rel="stylesheet" href="/css/admin.css">
+</head>
+<body class="admin">
+  <div class="admin-layout">
+    <nav class="admin-menu" id="menu-admin"></nav>
+
+    <main class="admin-main">
+      <h1>Clientes</h1>
+
+      <div class="filtros">
+        <input type="search" id="buscar" placeholder="Buscar por nombre o correo...">
+        <span class="conteo" id="conteo" style="margin:0"></span>
+      </div>
+
+      <div class="admin-caja">
+        <div class="tabla-caja" id="tabla-clientes"><p class="vacio">Cargando...</p></div>
+      </div>
+    </main>
+  </div>
+
+  <script src="/js/main.js"></script>
+  <script src="/js/admin.js"></script>
+  <script src="/js/admin-clientes.js"></script>
+</body>
+</html>

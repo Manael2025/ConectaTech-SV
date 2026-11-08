@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mensajes | Admin ConectaTech SV</title>
+  <link rel="stylesheet" href="/css/estilos.css">
+  <link rel="stylesheet" href="/css/admin.css">
+</head>
+<body class="admin">
+  <div class="admin-layout">
+    <nav class="admin-menu" id="menu-admin"></nav>
+
+    <main class="admin-main">
+      <h1>Mensajes</h1>
+      <div id="mensaje"></div>
+
+      <div class="admin-caja">
+        <div class="tabla-caja" id="tabla-mensajes"><p class="vacio">Cargando...</p></div>
+      </div>
+    </main>
+  </div>
+
+  <dialog id="dialogo" class="ancho">
+    <div id="contenido-dialogo"></div>
+    <div class="botones-dialogo">
+      <button type="button" class="btn btn-sec" id="cerrar" style="width:auto">Cerrar</button>
+    </div>
+  </dialog>
+
+  <script src="/js/main.js"></script>
+  <script src="/js/admin.js"></script>
+  <script src="/js/admin-mensajes.js"></script>
+</body>
+</html>
